@@ -9,3 +9,13 @@ log:
   log_path: "./log/server.log"
   save_days: 1
   level: "info"
+
+db:
+  host: "0.0.0.0"
+  port: 3306
+  user: "root"
+  password: "root"
+  dbname: "lottery_system"
+  max_idle_conns: 5
+  max_open_conns: 20
+  max_lifetime: 300

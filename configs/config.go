@@ -17,6 +17,7 @@ var (
 type GlobalConfig struct { // 创建一个大的配置类型把所有的配置类型都包含进来
 	AppConfig AppConf `yaml:"app" mapstructure:"app"`
 	LogConfig LogConf `yaml:"log" mapstructure:"log"`
+	DBConfig  DBConf  `yaml:"db" mapstructure:"db"`
 }
 
 type AppConf struct { // 定义一个App的配置类型
@@ -31,6 +32,17 @@ type LogConf struct { // 定义一个Log的配置类型
 	LogPath    string `yaml:"log_path" mapstructure:"log_path"`
 	SaveDays   int    `yaml:"save_days" mapstructure:"save_days"`
 	Level      string `yaml:"level" mapstructure:"level"`
+}
+
+type DBConf struct { // 定义一个DB的配置类型
+	Host         string `yaml:"host" mapstructure:"host"`
+	Port         int    `yaml:"port" mapstructure:"port"`
+	User         string `yaml:"user" mapstructure:"user"`
+	Password     string `yaml:"password" mapstructure:"password"`
+	DBName       string `yaml:"dbname" mapstructure:"dbname"`
+	MaxIdleConns int    `yaml:"max_idle_conns" mapstructure:"max_idle_conns"`
+	MaxOpenConns int    `yaml:"max_open_conns" mapstructure:"max_open_conns"`
+	MaxLifetime  int    `yaml:"max_lifetime" mapstructure:"max_lifetime"`
 }
 
 // 成功引入viper包之后，使用viper库来读取配置文件
