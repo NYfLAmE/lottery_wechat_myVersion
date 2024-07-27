@@ -16,7 +16,8 @@ var once sync.Once // 用于实现db单例，只初始化一次
 func OpenDB() { // 定义一个OpenDB函数，用于打开db（一个数据库连接），并在db上做一些连接配置
 	dbConfig := configs.GetGlobalConfig().DBConfig // 获取db配置
 
-	connArg := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+	// @tcp(0.0.0.0:%!s(int=3306))
+	connArg := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		dbConfig.User, dbConfig.Password, dbConfig.Host, dbConfig.Port, dbConfig.DBName) // 拼接连接数据库的参数
 
 	logrus.Infof("connectArg:%s\n", connArg) // 打印一下日志

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS `t_prize`;
-CREATE TABLE `t_prize`
+DROP TABLE IF EXISTS `prize`;
+CREATE TABLE `prize`
 (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `name` varchar(255) NOT NULL DEFAULT '' COMMENT '奖品名称',

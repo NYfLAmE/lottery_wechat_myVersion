@@ -1,0 +1,3 @@
+[2024-07-28 01:02:20]INFO [db.go:23] connectArg:root:root@tcp(localhost:3306)/lottery_system?charset=utf8mb4&parseTime=True&loc=Local
+
+[2024-07-28 01:02:20]INFO [repo.go:17] repo AddPrize success

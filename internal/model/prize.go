@@ -15,3 +15,17 @@ type Prize struct {
 	ProbabilityMax int64  `json:"probability_max" gorm:"probability_max"` // 中奖概率上限
 	ProbabilityMin int64  `json:"probability_min" gorm:"probability_min"` // 中奖概率下限
 }
+
+type PrizeReq struct { // http请求中的奖品 对应的结构体
+	Name  string `json:"name" gorm:"name"`   // 奖品名称
+	Type  int64  `json:"type" gorm:"type"`   // 奖品类型，1-虚拟币，2-虚拟券，3-实物小奖，4-实物大奖
+	Total int64  `json:"total" gorm:"total"` // 奖品数量，0 无限量，>0限量，<0无奖品
+}
+
+type AddPrizeReq struct { // http请求发来的奖品列表 对应的结构体
+	PrizeList []*PrizeReq `json:"prize_list"`
+}
+
+func (p *Prize) TableName() string {
+	return "prize" // 返回表名
+}
