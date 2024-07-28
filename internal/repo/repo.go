@@ -17,3 +17,16 @@ func AddPrize(prizeList []*model.Prize) error {
 	logrus.Infof("repo AddPrize success") // 打印成功日志
 	return nil
 }
+
+func GetPrizeList() ([]*model.Prize, error) {
+	db := gormcli.GetDB() // 获取db连接
+
+	var prizeList []*model.Prize
+	if err := db.Model(&model.Prize{}).Where("is_use = ?", 1).Find(&prizeList).Error; err != nil { // 使用gorm的方法查询数据
+		logrus.Errorf("repo GetPrizeList err: %v", err)
+		return nil, err
+	}
+
+	logrus.Infof("repo GetPrizeList success") // 打印成功日志
+	return prizeList, nil
+}

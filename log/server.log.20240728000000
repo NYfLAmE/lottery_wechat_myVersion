@@ -1,3 +1,19 @@
 [2024-07-28 01:02:20]INFO [db.go:23] connectArg:root:root@tcp(localhost:3306)/lottery_system?charset=utf8mb4&parseTime=True&loc=Local
 
 [2024-07-28 01:02:20]INFO [repo.go:17] repo AddPrize success
+[2024-07-28 22:39:52]INFO [db.go:23] connectArg:root:root@tcp(localhost:3306)/lottery_system?charset=utf8mb4&parseTime=True&loc=Local
+
+[2024-07-28 22:40:26]INFO [repo.go:30] repo GetPrizeList success
+[2024-07-28 22:43:13]INFO [repo.go:30] repo GetPrizeList success
+[2024-07-28 22:45:34]INFO [repo.go:30] repo GetPrizeList success
+[2024-07-28 22:46:05]INFO [db.go:23] connectArg:root:root@tcp(localhost:3306)/lottery_system?charset=utf8mb4&parseTime=True&loc=Local
+
+[2024-07-28 22:46:05]INFO [repo.go:31] repo GetPrizeList success: [0xc00051a280 0xc00051a400 0xc00051a480 0xc00051a500 0xc00051a580]
+[2024-07-28 22:46:12]INFO [repo.go:31] repo GetPrizeList success: [0xc00016a100 0xc00016a280 0xc00016a300 0xc00016a380 0xc00016a400]
+[2024-07-28 22:49:06]INFO [repo.go:31] repo GetPrizeList success: [0xc000490180 0xc000490300 0xc000490380 0xc000490400]
+[2024-07-28 22:50:11]INFO [repo.go:31] repo GetPrizeList success: [0xc000490600 0xc000490680 0xc000490700 0xc000490780]
+[2024-07-28 22:50:24]INFO [repo.go:31] repo GetPrizeList success: [0xc000490900 0xc000490a80 0xc000490b00 0xc000490b80]
+[2024-07-28 22:56:25]INFO [repo.go:31] repo GetPrizeList success: [0xc00051a000 0xc00051a200 0xc00051a280 0xc00051a300]
+[2024-07-28 22:56:53]INFO [db.go:23] connectArg:root:root@tcp(localhost:3306)/lottery_system?charset=utf8mb4&parseTime=True&loc=Local
+
+[2024-07-28 22:56:53]INFO [repo.go:33] repo GetPrizeList success: [0xc000445080 0xc000445200 0xc000445280 0xc000445300]

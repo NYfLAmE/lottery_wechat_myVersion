@@ -11,6 +11,7 @@ func SetRouter() *gin.Engine {
 
 	group := r.Group("/lottery_wechat")
 	group.POST("/add_prize", api.AddPrize)
+	group.GET("/get_prize_info", api.GetPrizeInfo) // 奖品信息查询
 
 	return r
 }

@@ -31,3 +31,31 @@ func AddPrize(prizeListHttp []*model.PrizeReq) error { // 将http中的奖品列
 
 	return nil
 }
+
+func GetPrizeInfo() (*model.GetPrizeRsp, error) {
+
+	// 定义一个全局变量 prizeListDB，存放repo层返回到记录集合
+	var prizeListDB []*model.Prize
+
+	// 调用repo层的方法，从数据库中检索出所有的记录
+	prizeListDB, err := repo.GetPrizeList()
+	if err != nil {
+		logrus.Errorf("service GetPrizeInfo err: %v", err)
+		return nil, err
+	}
+
+	// 处理数据，将结果返回给api层
+	var typeNum int64 = 0
+	var total int64 = 0
+	for _, prizeDB := range prizeListDB {
+		typeNum++
+		total += prizeDB.Total
+	}
+
+	// 返回处理结果
+	return &model.GetPrizeRsp{
+		TypeNum: typeNum,
+		Total:   total,
+	}, nil
+
+}

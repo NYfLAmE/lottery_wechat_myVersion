@@ -28,3 +28,17 @@ func AddPrize(ctx *gin.Context) { // 负责解析/add_prize请求发来的内容
 
 	ctx.JSON(http.StatusOK, "AddPrize Success") // 成功返回一个ok的响应
 }
+
+func GetPrizeInfo(ctx *gin.Context) { // 负责解析/get_prize_info请求发来的内容 & 调用service层的处理方法
+	prizeInfo := &model.GetPrizeRsp{}        // 获取一个GetPrizeRsp类型的变量，用来存放要返回的数据
+	prizeInfo, err := service.GetPrizeInfo() // 调用service层的处理方法，拿到处理结果
+
+	if err != nil {
+		logrus.Errorf("api GetPrizeInfo err: %v", err) // 打印日志
+		ctx.JSON(http.StatusInternalServerError, 500)  // 返回错误码
+		return
+	}
+
+	// 将结果返回给前端
+	ctx.JSON(http.StatusOK, prizeInfo) // 成功返回一个ok的响应
+}

@@ -26,6 +26,11 @@ type AddPrizeReq struct { // http请求发来的奖品列表 对应的结构体
 	PrizeList []*PrizeReq `json:"prize_list"`
 }
 
+type GetPrizeRsp struct {
+	TypeNum int64 `json:"prize_type_num"`
+	Total   int64 `json:"prize_total"`
+}
+
 func (p *Prize) TableName() string {
 	return "prize" // 返回表名
 }
